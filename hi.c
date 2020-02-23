@@ -9,9 +9,9 @@ struct Node
 void printList(struct Node* node){
 	while(node != NULL)
 	{
-		printf(" %d ", node->data);
+		printf(" %d ->", node->data);
 		node = node->next;
-	}
+	}printf(" NULL");
 }
 
 void deleteNode(struct Node** node, int target)
@@ -57,7 +57,8 @@ int main()
 	third->next = NULL; 
 	
 	printList(head);
-
-	
+	printf("\nNew list after deletion\n");
+	deleteNode(&head, 2);
+	printList(head);
 	return 0;
 }
